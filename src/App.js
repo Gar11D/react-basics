@@ -4,6 +4,7 @@ import React from 'react';
 import './App.css';
 
 import ChangeColorButton from './ChangeColorButton';
+import NameRegistration from './NameRegistration';
 
 class App extends React.Component {
   //Constructor
@@ -12,8 +13,16 @@ class App extends React.Component {
 
     this.state = {
       items: [],
+      nameRegistration: ''
     }
+
+    this.updateRegisteredName = this.updateRegisteredName.bind(this);
   }
+
+  updateRegisteredName(name) {
+    this.setState({nameRegistration: name})
+  }
+
   // componentDidMount is used to
   // execute the code
   componentDidMount() {
@@ -39,7 +48,14 @@ class App extends React.Component {
                 </ol>
             ))
         }
+        <br/>
         <ChangeColorButton />
+        <br/>
+        <br/>
+        <NameRegistration nameRegistration={this.state.nameRegistration}
+                          onNameChange={this.updateRegisteredName}
+        />
+        <h2>The name you registered is: {this.state.nameRegistration}</h2>
       </div> 
     )
   }

@@ -25,7 +25,7 @@ class ChangeColorButton extends React.Component {
     render () {
         return (
             <button className="colorButton" id="buttonId" onClick={this.handleChangeColor}>
-                CHANGE COLOR BUTTON CLASS RENDERING
+                CHANGE COLOR BUTTON 
             </button>
             //<button onClick={handleChangeColor}>Click here to change colour!</button>
         )
